@@ -3,9 +3,16 @@ const Layout = require('./Layout');
 
 function Main({ title, name }) {
   return (
-    <Layout title={title} name={name}>
-      Тут что-то
-    </Layout>
+    (name ? (
+      <Layout title={title} name={name}>
+        <h3>Тут Карточки</h3>
+      </Layout>
+    )
+      : (
+        <Layout title={title} name={name}>
+          <h3>Залогинься, а то чо ты как этот то а?</h3>
+        </Layout>
+      ))
   );
 }
 
