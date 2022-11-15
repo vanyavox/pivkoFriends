@@ -60,14 +60,13 @@ if (logForm) {
 
 document.querySelector('.cards').addEventListener('click', async (e) => {
   if (e.target.classList.contains('delete_btn')) {
-    const pivoId = document.querySelector('form').id;
+    const pivoId = e.target.parentNode.parentNode.dataset.id;
     const res = await fetch(`/${pivoId}`, {
       method: 'delete',
     });
     const data = await res.json();
     if (data.message) {
-      const cardDiv = document.querySelector(`#${pivoId}`);
-      cardDiv.remove();
+      e.target.parentNode.parentNode.remove();
     }
   }
   if (e.target.classList.contains('update_btn')) {
@@ -82,10 +81,10 @@ document.querySelectorAll('.update_form').forEach((form) => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const { title, desc } = e.target;
-    const div = e.target.closest('div');
-    console.log(div);
+    const div = e.target.parentNode.parentNode;
+    const papa = document.getElementById(e.target.dataset.id);
     // id Формы
-    const pivoId = document.querySelector('form').id;
+    const pivoId = e.target.dataset.id;
     const res = await fetch(`/${pivoId}`, {
       method: 'put',
       headers: { 'Content-type': 'application/json' },
@@ -95,11 +94,14 @@ document.querySelectorAll('.update_form').forEach((form) => {
       }),
     });
     const data = await res.json();
-    console.log(data);
     if (data.message === 'updated') {
-      div.querySelector('h3').innerHTML = title.value;
-      div.querySelector('p').innerHTML = desc.value;
-      div.querySelector('.updateCard').classList.toggle('active');
+      papa.querySelector('h3').innerHTML = title.value;
+      papa.querySelector('p').innerHTML = desc.value;
+      papa.querySelector('.updateCard').classList.toggle('active');
     }
   });
 });
+
+// parentNode, parentNode, parentNode...
+
+

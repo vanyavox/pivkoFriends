@@ -2,7 +2,7 @@ const React = require('react');
 
 function Card({ pivo, curUser }) {
   return (
-    <div data-id={pivo.id} id={pivo.id} className="card">
+    <div id={pivo.id} className="card">
       <h3>{pivo.title}</h3>
       <p>{pivo.desc}</p>
       <img className="img_pivo" src={pivo.pic} alt="pivo" />
@@ -15,7 +15,7 @@ function Card({ pivo, curUser }) {
             Обновить
           </button>
           <div className="updateCard">
-            <form id={pivo.id} className="update_form" method="post">
+            <form data-id={pivo.id} className="update_form" method="post">
               <input name="title" type="text" placeholder={pivo.title}/>
               <input name="desc" type="text" placeholder={pivo.desc}/>
               <button className="save" type="submit">

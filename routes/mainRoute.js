@@ -4,8 +4,8 @@ const { User, Pivo } = require('../db/models');
 
 router
   .get('/', async (req, res) => {
-    let user; let
-      name;
+    let user;
+    let name;
     if (req.session.user_id) {
       user = await User.findOne({ where: req.session.user_id });
       name = user.login;
@@ -52,6 +52,6 @@ router
     } catch (e) {
       res.json({ message: false });
     }
-  })
+  });
 
 module.exports = router;

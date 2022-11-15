@@ -6,7 +6,7 @@ function Main({ title, name, curUser, pivko }) {
   return (
     (name ? (
       <Layout title={title} name={name} curUser={curUser}>
-        <h3>Тут Карточки</h3>
+        <h3>Все карточки: </h3>
         <div className="cards">
  
             {pivko.map((pivo) => (
