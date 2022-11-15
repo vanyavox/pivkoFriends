@@ -5,15 +5,15 @@ module.exports = function Login({ title }) {
   return (
     <Layout title={title}>
       <div className='login'>
-        <form id='loginForm' action='/login' method='post'>
+        <form id='loginForm' action='/auth' method='post'>
           <p className='auth'>
             E-mail:
           </p>
-          <input type='email' placeholder='example@site.com' />
+          <input name="email" type='email' placeholder='example@site.com' />
           <p className='auth'>
             Пароль:
           </p>
-          <input type='password' minLength='5' placeholder='Enter your password' />
+          <input name="password" type='password' minLength='5' placeholder='Enter your password' />
           <br />
           <p className='auth'>
             <button type='submit'>Войти</button>

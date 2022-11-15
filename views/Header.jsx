@@ -10,9 +10,9 @@ module.exports = function Header({ name }) {
           </strong>
         </div>
         <div className="headerMenu">
-          <p>Привет, {name}</p>
-          [<a href="/profile">Профиль</a>]
-          [<a href="/logout">Выйти</a>]
+          <p className="userName">Привет, {name}</p>
+          <a className="headLink" href="/profile">[Профиль]</a>
+          <a className="headLink" href="/logout">[Выйти]</a>
         </div>
       </div>
     ) : (
