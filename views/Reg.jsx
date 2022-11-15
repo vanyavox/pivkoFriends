@@ -6,6 +6,10 @@ module.exports = function Reg({ title }) {
     <Layout title={title}>
       <div className='login'>
         <form id='regForm' action='/reg' method='post'>
+        <p className='auth'>
+            Логин:
+          </p>
+          <input name='login' type='text' placeholder='ЛюбительПивка' />
           <p className='auth'>
             E-mail:
           </p>
@@ -13,7 +17,7 @@ module.exports = function Reg({ title }) {
           <p className='auth'>
             Пароль:
           </p>
-          <input name='password' type='password' minLength='5' placeholder='Пароль' />
+          <input name='password1' type='password' minLength='5' placeholder='Пароль' />
           <p className='auth'>
             Повторите ваш пароль:
           </p>
