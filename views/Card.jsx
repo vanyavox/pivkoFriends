@@ -1,33 +1,32 @@
 const React = require('react');
-const Layout = require('./Layout');
 
-module.exports = function Card({pivo}) {
+function Card({ pivo, curUser }) {
   return (
-    <Layout>
-      <li data-id={pivo.id} className="card">
+    <div data-id={pivo.id} id={pivo.id} className="card">
       <h3>{pivo.title}</h3>
       <p>{pivo.desc}</p>
       <img className="img_pivo" src={pivo.pic} alt="pivo" />
-      {user === pivo.user_id && (
+      {curUser === pivo.userId && (
         <div>
           <button className="delete_btn" type="button">
-            Удалить пост
+            Удалить
           </button>
           <button className="update_btn" type="button">
-            Изменить
+            Обновить
           </button>
-          <div className="updateBeer">
-            <form className="updateBeer" method="post">
-              <input name="title" type="text" />
-              <input name="desc" type="text" />
+          <div className="updateCard">
+            <form id={pivo.id} className="update_form" method="post">
+              <input name="title" type="text" placeholder={pivo.title}/>
+              <input name="desc" type="text" placeholder={pivo.desc}/>
               <button className="save" type="submit">
-                Сохранить
+                Готово
               </button>
             </form>
           </div>
         </div>
       )}
-    </li>
-    </Layout>
-  )
+    </div>
+  );
 }
+
+module.exports = Card;
