@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Kanit:wght@300&family=Montserrat:wght@600&family=Nabla&family=Oxygen:wght@700&family=Ubuntu:wght@500&display=swap');
+
+body {
+  width: 100%;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  padding: 5px;
+}
+
+a:hover {
+  text-shadow: 1px 1px 2px black;
+  border-bottom: 1px solid #DAA520;
+  color: white;
+}
+
+.header {
+  background-color: #F0E68C;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20pt;
+  text-shadow: 1px 1px 2px black;
+  color: white;
+}
+
+.content {
+  width: 60%;
+  margin: auto;
+  align-content: center;
+}
+
+.login {
+  width: 25%;
+  margin: auto;
+}
+
+input {
+  border: 1px solid #DAA520;
+  border-radius: 5px;
+  padding: 3px;
+  margin-top: 3px;
+  color: #8B4513;
+}
+
+button {
+  margin-top: 5px;;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+button:hover {
+  background-color: #32cd32;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.footer {
+  background-color: #DAA520;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footerLinks > a:hover {
+  color: white;
+}
+
+.errorBlock {
+  border: 2px solid #ff4500;
+  padding: 5px;
+  font-size: 10pt;
+  border-radius: 8px;
+  visibility: hidden;
+  margin-top: 4px;
+}
