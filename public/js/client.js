@@ -60,8 +60,7 @@ if (logForm) {
 
 document.querySelector('.cards').addEventListener('click', async (e) => {
   if (e.target.classList.contains('delete_btn')) {
-    const pivoId = e.target.parentNode.parentNode.dataset.id;
-    const res = await fetch(`/${pivoId}`, {
+    const res = await fetch(`/${e.target.dataset.id}`, {
       method: 'delete',
     });
     const data = await res.json();
@@ -81,7 +80,7 @@ document.querySelectorAll('.update_form').forEach((form) => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const { title, desc } = e.target;
-    const div = e.target.parentNode.parentNode;
+    // const div = e.target.parentNode.parentNode;
     const papa = document.getElementById(e.target.dataset.id);
     // id Формы
     const pivoId = e.target.dataset.id;
@@ -103,5 +102,3 @@ document.querySelectorAll('.update_form').forEach((form) => {
 });
 
 // parentNode, parentNode, parentNode...
-
-

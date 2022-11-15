@@ -8,7 +8,7 @@ function Card({ pivo, curUser }) {
       <img className="img_pivo" src={pivo.pic} alt="pivo" />
       {curUser === pivo.userId && (
         <div>
-          <button className="delete_btn" type="button">
+          <button data-id={pivo.id} className="delete_btn" type="button">
             Удалить
           </button>
           <button className="update_btn" type="button">
